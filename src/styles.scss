@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap");
+
+input,
+select {
+  font-family: "PT Sans", sans-serif;
+}
+
+.FlexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.FormFieldContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
