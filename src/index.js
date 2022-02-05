@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import reportWebVitals from './reportWebVitals';
 import ReactDOM from "react-dom";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import App from "./App";
 import Home from "./components/Home";
 import Login from "./components/Login";
