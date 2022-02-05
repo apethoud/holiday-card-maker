@@ -3,8 +3,10 @@ import reportWebVitals from './reportWebVitals';
 import ReactDOM from "react-dom";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Home from "./components/Home";
 import App from "./App";
+import Home from "./components/Home";
+import Login from "./components/Login";
+import CardBuilder from "./components/CardBuilder";
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(
@@ -12,8 +14,11 @@ ReactDOM.render(
     <ThemeProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="app" element={<App />} />
+          <Route path="/" element={<App />}>
+            <Route path="home" element={<Home />} />
+            <Route path="login" element={<Login />} />
+            <Route path="card-builder" element={<CardBuilder />} />
+          </Route>
         </Routes>
       </Router>
     </ThemeProvider>
