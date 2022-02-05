@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { FormContainer, SectionTitle, Label, Input, Button, Text } from './StyledComponents';
 
 const validTestUser = {
+    id: "cE5bh7Sgb4gKd8v64h57",
     email: "andrew@email.com",
     password: "abc123"
 }
@@ -16,7 +17,7 @@ export default function Login(props) {
     function handleSubmit(event) {
         event.preventDefault();
         if (email === validTestUser.email && password === validTestUser.password) {
-            navigate("/card-builder");
+            navigate(`/profile/${validTestUser.id}`);
         } else {
             setShowLoginError(true);
         }
