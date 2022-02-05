@@ -7,6 +7,7 @@ import App from "./App";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import CardBuilder from "./components/CardBuilder";
+import NotFound from "./components/NotFound";
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(
@@ -18,6 +19,7 @@ ReactDOM.render(
             <Route path="home" element={<Home />} />
             <Route path="login" element={<Login />} />
             <Route path="card-builder" element={<CardBuilder />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </Router>
