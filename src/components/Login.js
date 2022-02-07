@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../contexts/UserContext';
 import { FormContainer, SectionTitle, Label, Input, Button, Text } from './StyledComponents';
 
 const validTestUser = {
@@ -13,11 +14,17 @@ export default function Login(props) {
     const [password, setPassword] = useState("");
     const [showLoginError, setShowLoginError] = useState(false);
     let navigate = useNavigate();
+    let { setLoggedInUser } = useContext(UserContext);
+
+    function loginUser(user) {
+        setLoggedInUser(user);
+    }
 
     function handleSubmit(event) {
         event.preventDefault();
         if (email === validTestUser.email && password === validTestUser.password) {
-            navigate(`/profile/${validTestUser.id}`);
+            loginUser(validTestUser);
+            navigate(`/card-builder`);
         } else {
             setShowLoginError(true);
         }
