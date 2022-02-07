@@ -26,6 +26,9 @@ export default function AppHeader(props) {
         <NavLink to="/card-builder" style={({ isActive }) => getStylingByActiveStatus(isActive)} className="NoUnderline">
           <HeaderLink>Card Builder</HeaderLink>
         </NavLink>
+        <NavLink to="/login" style={({ isActive }) => getStylingByActiveStatus(isActive)} className="NoUnderline">
+          <HeaderLink>Login</HeaderLink>
+        </NavLink>
       </div>
     </Header>
   );
