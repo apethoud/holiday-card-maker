@@ -56,7 +56,6 @@ export const HeaderSubtext = styled.p`
 
 export const HeaderLink = styled.p`
   margin: 6px 10px;
-  font-weight: 700;
   ${(props) =>
     props.theme.theme === "light"
       ? `
