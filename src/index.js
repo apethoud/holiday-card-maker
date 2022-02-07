@@ -17,7 +17,7 @@ ReactDOM.render(
       <Router>
         <Routes>
           <Route path="/" element={<App />}>
-            <Route path="home" element={<Home />} />
+            <Route index element={<Home />} />
             <Route path="login" element={<Login />} />
             <Route path="card-builder" element={<CardBuilder />} />
             <Route path="profile/:userId" element={<Profile />} />

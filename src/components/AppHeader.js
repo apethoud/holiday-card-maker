@@ -10,7 +10,7 @@ import {
 
 export default function AppHeader(props) {
   const holidayList = useHolidayList();
-  const { theme, toggleTheme } = useContext(ThemeContext);
+  const { toggleTheme } = useContext(ThemeContext);
 
   return (
     <Header>
