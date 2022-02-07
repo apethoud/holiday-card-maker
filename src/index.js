@@ -2,11 +2,13 @@ import { StrictMode } from "react";
 import reportWebVitals from './reportWebVitals';
 import ReactDOM from "react-dom";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { UserProvider } from "./contexts/UserContext";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import App from "./App";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import CardBuilder from "./components/CardBuilder";
+import RequireAuth from './components/RequireAuth';
 import NotFound from "./components/NotFound";
 import Profile from "./components/Profile";
 
@@ -14,17 +16,23 @@ const rootElement = document.getElementById("root");
 ReactDOM.render(
   <StrictMode>
     <ThemeProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<App />}>
-            <Route index element={<Home />} />
-            <Route path="login" element={<Login />} />
-            <Route path="card-builder" element={<CardBuilder />} />
-            <Route path="profile/:userId" element={<Profile />} />
-            <Route path="*" element={<NotFound />} />
-          </Route>
-        </Routes>
-      </Router>
+      <UserProvider>
+        <Router>
+          <Routes>
+            <Route path="/" element={<App />}>
+              <Route index element={<Home />} />
+              <Route path="login" element={<Login />} />
+              <Route path="card-builder" element={
+                <RequireAuth>
+                  <CardBuilder />
+                </RequireAuth>
+              } />
+              <Route path="profile/:userId" element={<Profile />} />
+              <Route path="*" element={<NotFound />} />
+            </Route>
+          </Routes>
+        </Router>
+      </UserProvider>
     </ThemeProvider>
   </StrictMode>,
   rootElement
