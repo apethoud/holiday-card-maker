@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { UserContext } from '../contexts/UserContext';
 import { FormContainer, SectionTitle, Label, Input, Button, Text } from './StyledComponents';
 
@@ -14,7 +14,10 @@ export default function Login(props) {
     const [password, setPassword] = useState("");
     const [showLoginError, setShowLoginError] = useState(false);
     let navigate = useNavigate();
+    let location = useLocation();
     let { setLoggedInUser } = useContext(UserContext);
+
+    let from = location.state?.from?.pathname || "/";
 
     function loginUser(user) {
         setLoggedInUser(user);
@@ -24,7 +27,7 @@ export default function Login(props) {
         event.preventDefault();
         if (email === validTestUser.email && password === validTestUser.password) {
             loginUser(validTestUser);
-            navigate(`/card-builder`);
+            navigate(from, { replace: true });
         } else {
             setShowLoginError(true);
         }
