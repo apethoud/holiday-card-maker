@@ -6,6 +6,14 @@ select {
   font-family: "PT Sans", sans-serif;
 }
 
+.NoUnderline {
+  text-decoration: none;
+}
+
+.Flex {
+  display: flex;
+}
+
 .FlexColumn {
   display: flex;
   flex-direction: column;

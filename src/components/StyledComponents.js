@@ -54,6 +54,18 @@ export const HeaderSubtext = styled.p`
     `}
 `;
 
+export const HeaderLink = styled.p`
+  margin: 6px 10px;
+  ${(props) =>
+    props.theme.theme === "light"
+      ? `
+      color: #000;
+    `
+      : `
+      color: #eee;
+    `}
+`;
+
 export const FormContainer = styled.div`
   border-radius: 10px;
   ${(props) =>

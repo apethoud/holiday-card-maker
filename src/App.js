@@ -1,14 +1,14 @@
 import "./styles.scss";
+import { Outlet } from 'react-router-dom';
 import { AppContainer } from "./components/StyledComponents";
 import AppHeader from "./components/AppHeader";
-import CardBuilder from "./components/CardBuilder";
 
 export default function App() {
   return (
     <AppContainer>
       <AppHeader />
       <div className="ViewContainer">
-        <CardBuilder />
+        <Outlet />
       </div>
     </AppContainer>
   );
